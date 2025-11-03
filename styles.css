@@ -20,7 +20,7 @@
   --able-lemon: #fff034;
   --able-pale-yellow: #f7f47c;
 
-  /* Weather Apå */
+  /* Weather på */
 
   --w-blue: #7597b8;
   --w-yellow: #f7e8be;
@@ -33,8 +33,8 @@
 }
 
 body {
-  background-color: var(--able-gray-30);
   font-family: sans-serif;
+  background: linear-gradient(var(--w-blue), var(--w-yellow));
 }
 
 .container {
@@ -43,7 +43,7 @@ body {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  background: linear-gradient(var(--w-blue), var(--w-yellow));
+
   height: 100vh;
   color: var(--able-text);
   gap: 75px;
@@ -60,8 +60,15 @@ body {
 }
 
 #displayIcon {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   font-size: 75px;
   margin-bottom: 50px;
+  /* background-color: rgba(255, 255, 255, 0.3);
+  height: 175px;
+  width: 175px;
+  border-radius: 25px; */
 }
 
 #weatherInfo {
@@ -72,4 +79,13 @@ body {
 #infoGet {
   font-size: 15px;
   font-style: italic;
+}
+
+#bkgCol {
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
+  background-color: rgba(90, 90, 90, 0.1);
+  /* -webkit-box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38); */
 }

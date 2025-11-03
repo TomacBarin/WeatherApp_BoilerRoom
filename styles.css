@@ -1,0 +1,57 @@
+:root {
+  /* Grayscale */
+  --able-gray-10: #141414;
+  --able-gray-20: #2d2d2d;
+  --able-gray-30: #3c3c3c;
+  --able-gray-40: #484848;
+  --able-gray-50: #646464;
+
+  /* Text */
+  --able-text: #eeeeee;
+
+  /* Vibrant accents */
+  --able-hot-pink: #ff39d4;
+  --able-fuchsia-tom: #ff2b6f;
+  --able-peach: #ffa374;
+  --able-coral: #ff94a6;
+  --able-cyan: #19e9ff;
+  --able-aqua: #5cffe8;
+  --able-orange: #f39420;
+  --able-lemon: #fff034;
+  --able-pale-yellow: #f7f47c;
+
+  /* Weather Apå */
+
+  --w-blue: #7597b8;
+  --w-yellow: #f7e8be;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--able-gray-30);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(var(--w-blue), var(--w-yellow));
+  height: 100vh;
+  color: var(--w-yellow);
+  gap: 75px;
+}
+
+#searchBtn,
+#cityInput {
+  padding: 10px;
+}
+
+#cityInput::placeholder {
+  font-style: italic;
+}

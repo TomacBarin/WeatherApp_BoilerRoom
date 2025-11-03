@@ -3,37 +3,32 @@ const userInputHtml = document.querySelector("#cityInput");
 const weatherInfo = document.querySelector("#weatherInfo");
 const displayIcon = document.querySelector("#displayIcon");
 const infoGetHtml = document.querySelector("#infoGet");
+const stadDisplay = document.querySelector('.stad');
 
 async function showWeather() {
   const cityName = userInputHtml.value.trim();
   if (cityName === "") {
     return;
   }
-
-  const city = CITIES.find(
-    (c) => c.name.toLowerCase() === cityName.toLowerCase()
-  );
-
+  //  Riktig API HÄÄÄÄR! rad 14-16!
+  const city = CITIES.find(c => c.name.toLowerCase() === cityName.toLowerCase());
   const key = `${city.lat},${city.lon}`;
   const weather = WEATHER[key];
 
   displayIcon.innerHTML = `${weather.temp}°C`;
-
+  stadDisplay.innerHTML = `${city.name}`;
   weatherInfo.innerHTML = `
   ${weather.description}  
-  ${weather.icon}  
-`;
+  ${weather.icon}
+  `;
 
   infoGetHtml.innerHTML = `(Hämtad ${weather.updatedAt})`;
-
   userInputHtml.value = "";
 }
 
 btnHtml.addEventListener("click", showWeather);
 
 setInterval(showWeather, 10000);
-showWeather();
-userInputHtml.value = "Stockholm";
 showWeather();
 
 const CITIES = [

@@ -48,7 +48,6 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   color: var(--able-text);
-
   gap: 75px;
   text-align: center;
   box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
@@ -69,15 +68,8 @@ body {
 }
 
 #displayIcon {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   font-size: 75px;
-  margin-bottom: 50px;
-  /* background-color: rgba(255, 255, 255, 0.3);
-  height: 175px;
-  width: 175px;
-  border-radius: 25px; */
+  margin-bottom: 20px;
 }
 
 #weatherInfo {
@@ -88,7 +80,6 @@ body {
 #infoGet {
   font-size: 15px;
   font-style: italic;
-  /* background-color: rgba(255, 255, 255, 0.3); */
 }
 
 .search-box {
@@ -129,15 +120,19 @@ body {
   cursor: pointer;
   border-radius: 0 50px 50px 0;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(25, 233, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(246, 248, 248, 0.4);
 }
 
 #searchBtn:hover {
-  background: var(--able-aqua);
-  /* transform: translateY(-2px); */
-  box-shadow: 0 8px 25px rgba(92, 255, 232, 0.6);
+  background: white;
+  box-shadow: 0 8px 25px rgba(203, 204, 204, 0.6);
 }
 
 #searchBtn:active {
   transform: translateY(1px);
+}
+
+.stad {
+  font-size: 30px;
+  margin-bottom: 20px;
 }

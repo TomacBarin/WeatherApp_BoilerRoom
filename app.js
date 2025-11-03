@@ -2,6 +2,7 @@ const btnHtml = document.querySelector("#searchBtn");
 const userInputHtml = document.querySelector("#cityInput");
 const weatherInfo = document.querySelector("#weatherInfo");
 const displayIcon = document.querySelector("#displayIcon");
+const infoGetHtml = document.querySelector("#infoGet");
 
 // Display Weather
 
@@ -22,10 +23,11 @@ async function showWeather() {
   displayIcon.innerHTML = `${weather.temp}°C`;
 
   weatherInfo.innerHTML = `
-  ${weather.description}  | 
-  ${weather.icon} | (Hämtad: 
-  ${weather.updatedAt}) 
+  ${weather.description}  
+  ${weather.icon}  
 `;
+
+  infoGet.innerHTML = `(Hämtad ${weather.updatedAt})`;
 }
 
 btnHtml.addEventListener("click", showWeather);

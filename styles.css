@@ -34,6 +34,7 @@
 
 body {
   background-color: var(--able-gray-30);
+  font-family: sans-serif;
 }
 
 .container {
@@ -41,10 +42,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
   background: linear-gradient(var(--w-blue), var(--w-yellow));
   height: 100vh;
-  color: var(--w-yellow);
+  color: var(--able-text);
   gap: 75px;
+  text-align: center;
 }
 
 #searchBtn,
@@ -58,4 +61,15 @@ body {
 
 #displayIcon {
   font-size: 75px;
+  margin-bottom: 50px;
+}
+
+#weatherInfo {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+#infoGet {
+  font-size: 15px;
+  font-style: italic;
 }

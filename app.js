@@ -1,9 +1,27 @@
 const btnHtml = document.querySelector("#searchBtn");
 const userInputHtml = document.querySelector("#cityInput");
+const weatherInfo = document.querySelector("#weatherInfo");
 
-btnHtml.addEventListener{"click", () => {
+// Display Weather
+
+async function showWeather() {
+  const cityName = userInputHtml.value.trim();
+  if (cityName === "") {
+    weatherInfo.textContent = "Skriv in en stad";
+    return;
+  }
   
-}}
+  const city = CITIES.find(c => c.name.toLowerCase() === cityName.toLowerCase());
+
+  const key = `${city.lat},${city.lon}`;
+  const weather = WEATHER[key];
+
+  weatherInfo.textContent = `${weather.icon}`
+
+  
+  }
+
+btnHtml.addEventListener("click", showWeather);
 
 // Mockup from Robin - to be replaced
 

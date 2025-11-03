@@ -55,3 +55,7 @@ body {
 #cityInput::placeholder {
   font-style: italic;
 }
+
+#displayIcon {
+  font-size: 75px;
+}

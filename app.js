@@ -1,6 +1,7 @@
 const btnHtml = document.querySelector("#searchBtn");
 const userInputHtml = document.querySelector("#cityInput");
 const weatherInfo = document.querySelector("#weatherInfo");
+const displayIcon = document.querySelector("#displayIcon");
 
 // Display Weather
 
@@ -10,16 +11,22 @@ async function showWeather() {
     weatherInfo.textContent = "Skriv in en stad";
     return;
   }
-  
-  const city = CITIES.find(c => c.name.toLowerCase() === cityName.toLowerCase());
+
+  const city = CITIES.find(
+    (c) => c.name.toLowerCase() === cityName.toLowerCase()
+  );
 
   const key = `${city.lat},${city.lon}`;
   const weather = WEATHER[key];
 
-  weatherInfo.textContent = `${weather.icon}`
+  displayIcon.innerHTML = `${weather.temp}°C`;
 
-  
-  }
+  weatherInfo.innerHTML = `
+  ${weather.description}  | 
+  ${weather.icon} | (Hämtad: 
+  ${weather.updatedAt}) 
+`;
+}
 
 btnHtml.addEventListener("click", showWeather);
 

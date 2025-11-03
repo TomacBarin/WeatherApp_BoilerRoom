@@ -4,4 +4,8 @@ This is the interface to a weather application, built in collaboration with a (c
 
 ## Goal
 
-Our goal as frontend developers is to build an appealing and functional GUI
+Our goal as frontend developers is to build an appealing and functional GUI, ready to implement the final code conducted by the system developer team.
+
+### Notes
+
+The interface will be intentionally simplistic in nature,

@@ -7,7 +7,6 @@ const infoGetHtml = document.querySelector("#infoGet");
 async function showWeather() {
   const cityName = userInputHtml.value.trim();
   if (cityName === "") {
-    weatherInfo.textContent = "Skriv in en stad";
     return;
   }
 

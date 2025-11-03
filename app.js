@@ -4,8 +4,6 @@ const weatherInfo = document.querySelector("#weatherInfo");
 const displayIcon = document.querySelector("#displayIcon");
 const infoGetHtml = document.querySelector("#infoGet");
 
-// Display Weather
-
 async function showWeather() {
   const cityName = userInputHtml.value.trim();
   if (cityName === "") {
@@ -27,12 +25,17 @@ async function showWeather() {
   ${weather.icon}  
 `;
 
-  infoGet.innerHTML = `(Hämtad ${weather.updatedAt})`;
+  infoGetHtml.innerHTML = `(Hämtad ${weather.updatedAt})`;
+
+  userInputHtml.value = "";
 }
 
 btnHtml.addEventListener("click", showWeather);
 
-// Mockup from Robin - to be replaced
+setInterval(showWeather, 10000);
+showWeather();
+userInputHtml.value = "Stockholm";
+showWeather();
 
 const CITIES = [
   { name: "Stockholm", country: "SE", lat: 59.3293, lon: 18.0686 },

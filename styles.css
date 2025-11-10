@@ -32,22 +32,47 @@
   box-sizing: border-box;
 }
 
+#weather-cards {
+  margin-top: 2rem;
+  display: flex;
+  gap: 20px;
+}
+
 body {
   font-family: sans-serif;
   background: linear-gradient(var(--w-blue), var(--w-yellow));
   align-items: center;
   height: 100vh;
+  
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
-.container {
+header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: var(--able-text);
+  gap: 1rem;
+  text-align: center;
+  box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
+  width: 400px;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.weather-container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
   flex-wrap: wrap;
   color: var(--able-text);
+  background-color: rgba(0, 0, 0, 0.4);
   gap: 75px;
   text-align: center;
   box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
@@ -56,6 +81,24 @@ body {
   width: 400px;
   border-radius: 20px;
   padding: 40px;
+
+
+}
+
+#removeCardField {
+    display: flex; 
+    justify-content: flex-end;
+  
+}
+
+.remove-button {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.remove-button:hover {
+  transform: scale(1.2);
 }
 
 #searchBtn,
@@ -86,7 +129,6 @@ body {
   position: relative;
   display: flex;
   width: 320px;
-  max-width: 90%;
 }
 
 #cityInput {

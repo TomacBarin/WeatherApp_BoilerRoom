@@ -5,26 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
     <title>The Weather App</title>
   </head>
   <body>
+
     <header>
-      <div class="container">
-        <section id="userInput">
-          <div class="search-box">
-            <input type="text" placeholder="Sök på stad..." id="cityInput" />
-            <button id="searchBtn">🔍</button>
-          </div>
-        </section>
-        <div id="bkgCol">
-          <section id="weatherIcon">
-            <h1 id="displayIcon">Bild</h1>
-            <h2 class="stad"></h2>
-            <p id="weatherInfo">Väderleksinformation</p>
-            <p id="infoGet"></p>
-          </section>
+      <h1>The Weather App ☁️</h1>
+      <section id="userInput">
+        <div class="search-box">
+          <input type="text" placeholder="Search for city..." id="cityInput" />
+          <button id="searchBtn"><i class="fa-solid fa-plus"></i></button>
         </div>
-      </div>
+      </section>
     </header>
+
+    <div id="weather-cards">
+
+      <div class="weather-container">
+        
+        <div id="removeCardField">
+          <i class="fa-solid fa-xmark remove-button"></i>
+        </div>
+        <section id="weatherIcon">
+          <h1 id="displayIcon">Bild</h1>
+          <h2 class="stad"></h2>
+          <p id="weatherInfo">Väderleksinformation</p>
+          <p id="infoGet"></p>
+        </section>
+        </div>
+      
+    </div>
+
+    </div>
+    
+
   </body>
 </html>

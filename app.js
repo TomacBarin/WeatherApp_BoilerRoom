@@ -8,6 +8,19 @@ const infoGetHtml = document.querySelector("#infoGet");
 const stadDisplay = document.querySelector(".stad");
 
 btnHtml.addEventListener("click", () => {
-  console.log("Knapp i app.js har klickats på.");
+  console.log("Knapp klickad – uppdaterar väder");
   weatherFetch(weatherInfo);
 });
+
+let autoUpdateInterval;
+
+function startAutoUpdate() {
+  weatherFetch(weatherInfo);
+
+  autoUpdateInterval = setInterval(() => {
+    console.log("Automatisk uppdatering...");
+    weatherFetch(weatherInfo);
+  }, 10000);
+}
+
+startAutoUpdate();

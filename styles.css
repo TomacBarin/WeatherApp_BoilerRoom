@@ -156,7 +156,7 @@ header {
   position: relative;
   color: rgb(234, 234, 234);
 
-  right: -230px;
+  right: -240px;
 }
 
 .remove-button:hover {
@@ -184,4 +184,5 @@ header {
   font-size: 12px;
   font-style: italic;
   color: rgb(182, 182, 182);
+  margin-bottom: 1.2rem;
 }

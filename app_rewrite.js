@@ -38,10 +38,10 @@ btnHtml.addEventListener("click", () => {
         <i class="fa-solid fa-xmark remove-button"></i>
       </div>
       <section class="weatherIcon">
-        <h1 class="displayIcon">${weather.icon} ${weather.temp}°C</h1>
         <h2 class="stad">${city.name}</h2>
+        <h2 class="displayIcon">${weather.icon} ${weather.temp}°C</h1>
         <p class="weatherInfo">${weather.description}</p>
-        <p class="infoGet">(Hämtad ${weather.updatedAt})</p>
+        <p class="infoGet">( Hämtad ${weather.updatedAt} )</p>
       </section>
     </div>
   `;

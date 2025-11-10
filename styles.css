@@ -57,6 +57,7 @@ header {
   align-items: center;
   flex-direction: column;
   color: var(--able-text);
+  background-color: rgba(0, 0, 0, 0.4);
   gap: 1rem;
   text-align: center;
   box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
@@ -68,14 +69,13 @@ header {
 }
 
 .weather-container {
-  /* display: flex;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-direction: column; */
-  flex-wrap: wrap;
+
   color: var(--able-text);
   background-color: rgba(0, 0, 0, 0.4);
-  gap: 75px;
+
   text-align: center;
   box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
   -webkit-box-shadow: 0px 1px 29px 0px rgba(0, 0, 0, 0.38);
@@ -83,24 +83,6 @@ header {
   width: 400px;
   border-radius: 20px;
   padding: 40px;
-
-
-}
-
-#removeCardField {
-    display: flex; 
-    justify-content: flex-end;
-  
-}
-
-.remove-button {
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-.remove-button:hover {
-  transform: scale(1.2);
 }
 
 #searchBtn,
@@ -109,21 +91,6 @@ header {
 }
 
 #cityInput::placeholder {
-  font-style: italic;
-}
-
-#displayIcon {
-  font-size: 75px;
-  margin-bottom: 20px;
-}
-
-#weatherInfo {
-  font-size: 30px;
-  margin-bottom: 15px;
-}
-
-#infoGet {
-  font-size: 15px;
   font-style: italic;
 }
 
@@ -176,7 +143,45 @@ header {
   transform: translateY(1px);
 }
 
+/* Weather card X*/
+
+#removeCardField {
+  
+}
+
+.remove-button {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  position: relative;
+  color: rgb(234, 234, 234);
+
+  right: -230px;
+}
+
+.remove-button:hover {
+  transform: scale(1.2);
+  color: rgb(252, 111, 111);
+}
+
+/* Weather card TXT */
+
 .stad {
   font-size: 30px;
-  margin-bottom: 20px;
+}
+
+#displayIcon {
+  font-size: 75px;
+}
+
+.weatherInfo {
+  font-size: 30px;
+  margin-top: .6rem;
+  margin-bottom: .5rem;
+}
+
+.infoGet {
+  font-size: 12px;
+  font-style: italic;
+  color: rgb(182, 182, 182);
 }

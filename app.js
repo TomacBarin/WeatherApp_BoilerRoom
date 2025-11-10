@@ -26,6 +26,8 @@ async function showWeather() {
   userInputHtml.value = "";
 }
 
+
+
 btnHtml.addEventListener("click", showWeather);
 
 setInterval(showWeather, 10000);

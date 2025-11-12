@@ -122,6 +122,12 @@ header {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
+#cityInput:focus-visible {
+  outline: 3px solid blue;
+  outline-offset: 0.2rem;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* optional */
+}
+
 #searchBtn {
   padding: 14px 20px;
   border: none;
@@ -145,9 +151,11 @@ header {
 
 /* Weather card X*/
 
-/* #removeCardField {
-  
-} */
+#removeCardField {
+  /* button {
+    
+  } */
+}
 
 .remove-button {
   font-size: 20px;
@@ -155,6 +163,10 @@ header {
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
   position: relative;
   color: rgb(234, 234, 234);
+
+  background: none;
+    border: none;
+    padding: 0;
 
   right: -240px;
 }
@@ -185,4 +197,9 @@ header {
   font-style: italic;
   color: rgb(182, 182, 182);
   margin-bottom: 1.2rem;
+}
+
+button:focus-visible {
+outline: 3px solid blue;
+outline-offset: 0.2rem;
 }

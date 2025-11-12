@@ -35,7 +35,9 @@ btnHtml.addEventListener("click", () => {
   const cardHtml = `
     <div class="weather-container">
       <div class="removeCardField">
-        <i class="fa-solid fa-xmark remove-button"></i>
+        <button class="remove-button" aria-label="Remove weather card">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
       <section class="weatherIcon">
         <h2 class="stad">${city.name}</h2>

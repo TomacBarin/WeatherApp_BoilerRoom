@@ -1,3 +1,9 @@
+let addedCities = [];
+
+export function init(){
+  console.log("Created city storage array");
+}
+
 export function createCard(city, weather){
 
   const temp = Math.round(weather.temperature);
@@ -47,4 +53,27 @@ export function createCard(city, weather){
 
   return card;
 
+
+}
+
+class City {
+  constructor(city, weather) {
+    this.city = city;
+    this.weather = weather;
+  }
+}
+
+export function addCity(city, weather){
+  const addedCity = new City(city, weather);
+  addedCities.push(addedCity);
+  console.log(`Added city "${city.name}" to storage!`);
+  createCard(city, weather);
+  console.log(`Added card for "${city.name}" to DOM`);
+  getAddedCities();
+}
+
+export function getAddedCities(){
+  addedCities.forEach(cityInstance => {
+  console.log(cityInstance.city);
+});
 }

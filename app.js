@@ -4,7 +4,6 @@ import * as CardCreator from "./cardcreator.js";
 const btnHtml = document.querySelector("#searchBtn");
 const userInputHtml = document.querySelector("#cityInput");
 
-
 let addedCities = [];
 
 btnHtml.addEventListener("click", () => {

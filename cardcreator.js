@@ -25,10 +25,10 @@ export function createCard(city, weather){
   weatherIcon.textContent = `🌞 ${temp} °C`;
   const weatherInfo = document.createElement("p");
   weatherInfo.className = "weatherInfo";
-  weatherInfo.textContent = "Klar himmel";
+  weatherInfo.textContent = weather.description;
   const infoGet = document.createElement("p");
   infoGet.className = "infoGet";
-  infoGet.textContent = "Hämtad 21:00";
+  infoGet.textContent = `Hämtad ${weather.updatedAt}`;
 
   // Append elements
   weatherCards.appendChild(card);
@@ -44,4 +44,7 @@ export function createCard(city, weather){
   removeBtn.onclick = () => {
     card.remove();
   };
+
+  return card;
+
 }

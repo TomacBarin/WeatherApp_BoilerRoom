@@ -1,22 +1,19 @@
 import * as WeatherData from "./weatherdata.js";
 import * as CardCreator from "./cardcreator.js";
 
+
 const btnHtml = document.querySelector("#searchBtn");
 const userInputHtml = document.querySelector("#cityInput");
 const weatherCards = document.querySelector("#weather-cards");
 
-btnHtml.addEventListener("click", () => {
+btnHtml.addEventListener("click", async () => {
   const cityName = userInputHtml.value.trim();
   if (!cityName) return;
 
-  const city = WeatherData.CITIES.find(c => c.name.toLowerCase() === cityName.toLowerCase());
-  if (!city) {
-    alert("Staden finns inte!");
-    return;
-  }
+  const result = await WeatherData.getWeather(cityName);
+  if (!result) return;
 
-  const key = `${city.lat},${city.lon}`;
-  const weather = WeatherData.WEATHER[key];
+  const { city, weather } = result;
 
   CardCreator.createCard(city, weather);
 

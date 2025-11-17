@@ -7,10 +7,28 @@ export const CITIES = [
   { name: "Lund", country: "SE", lat: 55.7047, lon: 13.191 }
 ];
 
-export const WEATHER = {
-  "59.3293,18.0686": {temp: 7, description: "Mulet", icon: "☁️", updatedAt: "2025-11-02T09:00:00Z"},
-  "57.7089,11.9746": {temp: 8, description: "Lätt regn", icon: "🌧️", updatedAt: "2025-11-02T09:00:00Z"},
-  "55.605,13.0038": {temp: 9, description: "Klart", icon: "☀️", updatedAt: "2025-11-02T09:00:00Z"},
-  "59.8586,17.6389": {temp: 6, description: "Dis", icon: "🌫️", updatedAt: "2025-11-02T09:00:00Z"},
-  "55.7047,13.191": {temp: 8, description: "Halvklart", icon: "⛅", updatedAt: "2025-11-02T09:00:00Z"}
-};
+export async function getWeather(cityName) {
+  try {
+    const city = CITIES.find(c => c.name.toLowerCase() === cityName.toLowerCase());
+    if (!city) {
+      alert("Staden finns inte!");
+      return null;
+    }
+
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current_weather=true`;
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      throw new Error("Något gick fel med API-förfrågan.");
+    }
+
+    const data = await res.json();
+
+    return { city, weather: data.current_weather };
+
+  } catch (error) {
+    console.error("Fel vid hämtning av väder:", error);
+    alert("Kunde inte hämta väderdata just nu. Försök igen senare.");
+    return null;
+  }
+}

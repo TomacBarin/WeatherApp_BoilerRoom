@@ -19,3 +19,11 @@ btnHtml.addEventListener("click", async () => {
 
   userInputHtml.value = "";
 });
+
+userInputHtml.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+
+    btnHtml.click();
+  }
+});

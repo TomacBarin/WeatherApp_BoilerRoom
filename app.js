@@ -1,75 +1,24 @@
+import * as WeatherData from "./weatherdata.js";
+import * as CardCreator from "./cardcreator.js";
+
 const btnHtml = document.querySelector("#searchBtn");
 const userInputHtml = document.querySelector("#cityInput");
-const weatherInfo = document.querySelector("#weatherInfo");
-const displayIcon = document.querySelector("#displayIcon");
-const infoGetHtml = document.querySelector("#infoGet");
-const stadDisplay = document.querySelector('.stad');
+const weatherCards = document.querySelector("#weather-cards");
 
-async function showWeather() {
+btnHtml.addEventListener("click", () => {
   const cityName = userInputHtml.value.trim();
-  if (cityName === "") {
+  if (!cityName) return;
+
+  const city = WeatherData.CITIES.find(c => c.name.toLowerCase() === cityName.toLowerCase());
+  if (!city) {
+    alert("Staden finns inte!");
     return;
   }
-  //  Riktig API HÄÄÄÄR! rad 14-16!
-  const city = CITIES.find(c => c.name.toLowerCase() === cityName.toLowerCase());
+
   const key = `${city.lat},${city.lon}`;
-  const weather = WEATHER[key];
+  const weather = WeatherData.WEATHER[key];
 
-  displayIcon.innerHTML = `${weather.temp}°C`;
-  stadDisplay.innerHTML = `${city.name}`;
-  weatherInfo.innerHTML = `
-  ${weather.description}  
-  ${weather.icon}
-  `;
+  CardCreator.createCard(city, weather);
 
-  infoGetHtml.innerHTML = `(Hämtad ${weather.updatedAt})`;
   userInputHtml.value = "";
-}
-
-
-
-btnHtml.addEventListener("click", showWeather);
-
-setInterval(showWeather, 10000);
-showWeather();
-
-const CITIES = [
-  { name: "Stockholm", country: "SE", lat: 59.3293, lon: 18.0686 },
-  { name: "Göteborg", country: "SE", lat: 57.7089, lon: 11.9746 },
-  { name: "Malmö", country: "SE", lat: 55.605, lon: 13.0038 },
-  { name: "Uppsala", country: "SE", lat: 59.8586, lon: 17.6389 },
-  { name: "Lund", country: "SE", lat: 55.7047, lon: 13.191 },
-];
-
-const WEATHER = {
-  "59.3293,18.0686": {
-    temp: 7,
-    description: "Mulet",
-    icon: "☁️",
-    updatedAt: "2025-11-02T09:00:00Z",
-  },
-  "57.7089,11.9746": {
-    temp: 8,
-    description: "Lätt regn",
-    icon: "🌧️",
-    updatedAt: "2025-11-02T09:00:00Z",
-  },
-  "55.605,13.0038": {
-    temp: 9,
-    description: "Klart",
-    icon: "☀️",
-    updatedAt: "2025-11-02T09:00:00Z",
-  },
-  "59.8586,17.6389": {
-    temp: 6,
-    description: "Dis",
-    icon: "🌫️",
-    updatedAt: "2025-11-02T09:00:00Z",
-  },
-  "55.7047,13.191": {
-    temp: 8,
-    description: "Halvklart",
-    icon: "⛅",
-    updatedAt: "2025-11-02T09:00:00Z",
-  },
-};
+});

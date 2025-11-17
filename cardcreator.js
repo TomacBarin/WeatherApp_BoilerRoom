@@ -1,28 +1,4 @@
-import * as WeatherData from "./weatherdata.js";
-
-const btnHtml = document.querySelector("#searchBtn");
-const userInputHtml = document.querySelector("#cityInput");
-const weatherCards = document.querySelector("#weather-cards");
-
-btnHtml.addEventListener("click", () => {
-  const cityName = userInputHtml.value.trim();
-  if (!cityName) return;
-
-  const city = WeatherData.CITIES.find(c => c.name.toLowerCase() === cityName.toLowerCase());
-  if (!city) {
-    alert("Staden finns inte!");
-    return;
-  }
-
-  const key = `${city.lat},${city.lon}`;
-  const weather = WeatherData.WEATHER[key];
-
-  createCard(city, weather);
-
-  userInputHtml.value = "";
-});
-
-function createCard(){
+export function createCard(){
 
   // Get card container
   const weatherCards = document.querySelector("#weather-cards");
@@ -62,7 +38,6 @@ function createCard(){
   infoField.appendChild(weatherInfo);
   infoField.appendChild(infoGet);
   
-
   // Add event listener to remove button
   removeBtn.onclick = () => {
     card.remove();

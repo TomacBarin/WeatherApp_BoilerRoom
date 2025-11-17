@@ -3,7 +3,7 @@ import * as CardCreator from "./cardcreator.js";
 
 const btnHtml = document.querySelector("#searchBtn");
 const userInputHtml = document.querySelector("#cityInput");
-const weatherCards = document.querySelector("#weather-cards");
+
 
 let addedCities = [];
 

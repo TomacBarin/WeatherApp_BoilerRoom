@@ -43,4 +43,6 @@ export function createCard(city, weather){
     card.remove();
   };
 
+  return card;
+
 }

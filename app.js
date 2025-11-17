@@ -5,6 +5,8 @@ const btnHtml = document.querySelector("#searchBtn");
 const userInputHtml = document.querySelector("#cityInput");
 const weatherCards = document.querySelector("#weather-cards");
 
+let addedCities = [];
+
 btnHtml.addEventListener("click", () => {
   const cityName = userInputHtml.value.trim();
   if (!cityName) return;

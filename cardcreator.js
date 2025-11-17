@@ -1,5 +1,7 @@
 export function createCard(city, weather){
 
+  const temp = Math.round(weather.temperature);
+
   // Get card container
   const weatherCards = document.querySelector("#weather-cards");
 
@@ -20,7 +22,7 @@ export function createCard(city, weather){
   cityName.textContent = city.name;
   const weatherIcon = document.createElement("h2");
   weatherIcon.className = "displayIcon";
-  weatherIcon.textContent = `${weather.icon} ${weather.temp}°C`;
+  weatherIcon.textContent = `🌞 ${temp} °C`;
   const weatherInfo = document.createElement("p");
   weatherInfo.className = "weatherInfo";
   weatherInfo.textContent = weather.description;

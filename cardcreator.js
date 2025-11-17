@@ -11,7 +11,6 @@ export function getWeatherIcon(weatherCode) {
     case 2: return '☁️';
     case 3: return '🌧️';
     case 61: return '❄️';
-
   }
 }
 

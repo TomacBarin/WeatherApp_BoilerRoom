@@ -1,7 +1,5 @@
 // Exempeldata
 export const CITIES = [
-  { name: "Uppsala", country: "SE", lat: 59.8586, lon: 17.6389 },
-  { name: "Lund", country: "SE", lat: 55.7047, lon: 13.191 },
   { name: "Berlin", lat: 52.52, lon: 13.4050 },
   { name: "Stockholm", lat: 59.3294, lon: 18.0686 },
   { name: "Göteborg", lat: 57.7089, lon: 11.9746 },

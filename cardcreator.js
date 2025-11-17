@@ -1,3 +1,13 @@
+export function getWeatherIcon(weatherCode) {
+  switch (weatherCode) {
+    case 0: return '☀️';
+    case 1: return '🌤️';
+    case 2: return '☁️';
+    case 3: return '🌧️';
+    case 61: return '❄️';
+  }
+}
+
 export function createCard(city, weather){
 
   const temp = Math.round(weather.temperature);
@@ -22,7 +32,7 @@ export function createCard(city, weather){
   cityName.textContent = city.name;
   const weatherIcon = document.createElement("h2");
   weatherIcon.className = "displayIcon";
-  weatherIcon.textContent = `🌞 ${temp} °C`;
+  weatherIcon.textContent = `${getWeatherIcon(weather.weathercode)} ${temp} °C`;
   const weatherInfo = document.createElement("p");
   weatherInfo.className = "weatherInfo";
   weatherInfo.textContent = weather.description;

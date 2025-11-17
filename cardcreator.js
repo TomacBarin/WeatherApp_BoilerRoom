@@ -44,7 +44,7 @@ export function createCard(city, weather){
   weatherInfo.textContent = weather.description;
   const infoGet = document.createElement("p");
   infoGet.className = "infoGet";
-  infoGet.textContent = `Hämtad ${weather.updatedAt}`;
+  infoGet.textContent = `Hämtad ${weather.time}`;
 
   // Append elements
   weatherCards.appendChild(card);

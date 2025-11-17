@@ -41,7 +41,7 @@ export async function getWeather(cityName) {
     }
 
     const data = await res.json();
-
+    console.log(data);
     return { city, weather: data.current_weather };
 
   } catch (error) {

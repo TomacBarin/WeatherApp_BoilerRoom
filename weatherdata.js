@@ -19,7 +19,10 @@ export const CITIES = [
   { name: "Vienna", lat: 48.2082, lon: 16.3738 },
   { name: "Warsaw", lat: 52.2297, lon: 21.0122 },
   { name: "Athens", lat: 37.9838, lon: 23.7275 },
-  { name: "Reykjavik", lat: 64.1355, lon: -21.8954 }
+  { name: "Reykjavik", lat: 64.1355, lon: -21.8954 },
+  { name: "Malmö", country: "SE", lat: 55.6050, lon: 13.0038 },
+  { name: "Uppsala", country: "SE", lat: 59.8586, lon: 17.6389 },
+  { name: "Lund", country: "SE", lat: 55.7047, lon: 13.1910 },
 ];
 
 export async function getWeather(cityName) {

@@ -17,30 +17,7 @@ btnHtml.addEventListener("click", () => {
   const key = `${city.lat},${city.lon}`;
   const weather = WeatherData.WEATHER[key];
 
-  // const cardHtml = `
-  //   <div class="weather-container">
-  //     <div class="removeCardField">
-  //       <button class="remove-button" aria-label="Remove weather card">
-  //         <i class="fa-solid fa-xmark"></i>
-  //       </button>
-  //     </div>
-  //     <section class="weatherIcon">
-  //       <h2 class="stad">${city.name}</h2>
-  //       <h2 class="displayIcon">${weather.icon} ${weather.temp}°C</h1>
-  //       <p class="weatherInfo">${weather.description}</p>
-  //       <p class="infoGet">( Hämtad ${weather.updatedAt} )</p>
-  //     </section>
-  //   </div>
-  // `;
-
-  // weatherCards.insertAdjacentHTML("beforeend", cardHtml);
-
-  createCard();
-
-  const removeButtons = weatherCards.querySelectorAll(".remove-button");
-  removeButtons.forEach(btn => {
-    btn.onclick = (e) => e.target.closest(".weather-container").remove();
-  });
+  createCard(city, weather);
 
   userInputHtml.value = "";
 });
@@ -59,11 +36,35 @@ function createCard(){
   const removeBtn = document.createElement("button");
   removeBtn.className = "remove-button";
   removeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-  // Create icon element
-  // const 
+  // Create info element
+  const infoField = document.createElement("section");
+  infoField.className = "infoField";
+  const cityName = document.createElement("h2");
+  cityName.className = "stad";
+  cityName.textContent = "City Name";
+  const weatherIcon = document.createElement("h2");
+  weatherIcon.className = "displayIcon";
+  weatherIcon.textContent = "🌞 9°C";
+  const weatherInfo = document.createElement("p");
+  weatherInfo.className = "weatherInfo";
+  weatherInfo.textContent = "Klar himmel";
+  const infoGet = document.createElement("p");
+  infoGet.className = "infoGet";
+  infoGet.textContent = "Hämtad 21:00";
 
-
+  // Append elements
   weatherCards.appendChild(card);
   card.appendChild(removeBtnField);
   removeBtnField.appendChild(removeBtn);
+  card.appendChild(infoField);
+  infoField.appendChild(cityName);
+  infoField.appendChild(weatherIcon);
+  infoField.appendChild(weatherInfo);
+  infoField.appendChild(infoGet);
+  
+
+  // Add event listener to remove button
+  removeBtn.onclick = () => {
+    card.remove();
+  };
 }

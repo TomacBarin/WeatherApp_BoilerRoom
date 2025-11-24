@@ -11,6 +11,8 @@
     --card-t-b-height: 4rem;
     --card-bg: #495df5;
     --card-margin-top: 4rem;
+
+    --color-primary: #495df5;
 }
 
 body {
@@ -83,7 +85,43 @@ body {
     }
 }
 
-nav {
-    height: 3rem;
-    background-color: #495df5;
+#nav-bar {
+    width: 380px;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        background-color: #ffffff;
+        width: 70%;
+        height: 3rem;
+        border-radius: 1.8rem 0 0 1.8rem;
+        border: 0;
+        padding-left: 1.8rem;
+    }
+
+    button {
+        height: 3rem;
+        width: 30%;
+        border: 0;
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 0 1.8rem 1.8rem 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: var(--color-primary);
+        color: #ffffff;
+    }
+
+    /* background-color: #495df5; */
+}
+
+#container-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

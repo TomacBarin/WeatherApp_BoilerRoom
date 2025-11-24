@@ -22,6 +22,9 @@ body {
 
     display: flex;
     justify-content: center;
+
+    height: 100vh;
+    width: 100vw;
 }
 
 
@@ -29,7 +32,7 @@ body {
     
     .weather-card-info {
         width: var(--min-width);
-        max-height: 678px;
+        /* max-height: 678px; */
         background-color: var(--card-bg);
 
         display: flex;
@@ -94,7 +97,7 @@ body {
 
     input {
         background-color: #ffffff;
-        width: 70%;
+        width: 100%;
         height: 3rem;
         border-radius: 1.8rem 0 0 1.8rem;
         border: 0;
@@ -103,13 +106,16 @@ body {
 
     button {
         height: 3rem;
-        width: 30%;
+        width: 4rem;
         border: 0;
         background-color: #ffffff;
         color: #000000;
         cursor: pointer;
         border-radius: 0 1.8rem 1.8rem 0;
         transition: background-color 0.3s ease, color 0.3s ease;
+        i {
+            font-size: 1.2rem;
+        }
     }
 
     button:hover {
@@ -127,6 +133,7 @@ body {
     align-items: center;
 }
 
-#cards-container {
-    /* height: 400px; */
-}
+/* #cards-container {
+    height: 768px;
+    background-color: aquamarine;
+} */

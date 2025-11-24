@@ -70,11 +70,14 @@ export class WeatherCard{
     }
 
     // Remove card and elements from DOM
-    remove() {
-        if (this.element) {
+   remove() {
+    if (this.element) {
+        this.element.classList.add('removing');
+
+        setTimeout(() => {
             this.element.remove();
-            // Remove reference so that the garbage collector can free the memory. Not really needed?
             this.element = null;
-        }
+        }, 300); // matchar transition-tiden
     }
+}
 }

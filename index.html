@@ -8,35 +8,46 @@
       content="Vädret Nu – enkel och snabb väderprognos för svenska städer. Sök på stad och få aktuellt väder direkt."
     />
     <script type="module" src="app.js" defer></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles-new.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-
-    <title>Vädret Nu – snabb väderprognos för Sverige</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Vädret Nu – Snabb väderprognos för Sverige</title>
   </head>
   <body>
-    <header>
-      <h1>Kolla vädret ☁️</h1>
-      <nav id="userInput">
-        <div class="search-box">
-          <input
-            type="text"
-            placeholder="Sök på stad..."
-            aria-controls="weather-cards"
-            id="cityInput"
-          />
-          <button id="searchBtn" aria-label="Add city to weather app">
-            <i class="fa-solid fa-plus"></i>
-          </button>
-        </div>
-      </nav>
-    </header>
+    <div id="container-main">
 
-    <main>
-      <!-- Väderkort hamnar här i -->
-      <div id="weather-cards"></div>
-    </main>
+      <main>
+
+        <!-- Main card -->
+        <section class="weather-box">
+          <div class="weather-box-top">
+            <button class="weather-box-close">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </div>
+          <div class="weather-box-info">
+            <p class="weather-date">Måndag, 24 November</p>
+            <h2 class="weather-city">Stockholm</h2>
+            <img class="weather-icon" src="assets/sun-clouds.png" alt="">
+            <h3 class="weather-degrees">31</h3>
+            <p class="weather-description">Mest soligt</p>
+          </div>
+          <div class="weather-box-bottom">
+            &nbsp;
+          </div>
+        </section>
+
+      </main>
+
+      <nav>
+        <input type="text" placeholder="Search...">
+      </nav>
+
+    </div>
   </body>
 </html>

@@ -51,18 +51,23 @@
 //   }
 // }
 
-export class getWeather {
-  constructor(data, url: 'http://kontoret.onvo.se:10480/GetWeather?lat=59.3293&lon=18.0686') {
+export class WeatherService {
+  constructor(url = 'http://kontoret.onvo.se:10480/GetWeather?lat=59.3293&lon=18.0686') {
     this.url = url;
-    this.data = data;
+    this.data = null;
   }
-  
+
   async getWeatherData() {
     try {
       const res = await fetch(this.url);
-      if (!res.ok) throw new Error('Kunde inte hämta produkter');
-      this.data = await res.json();
-      return this.data;
+
+      if (!res.ok) {
+        throw new Error('Kunde inte hämta väderdata');
+      }
+
+      const xmlText = await res.text();  // API returnerar XML, inte JSON
+      return xmlText;
+
     } catch (error) {
       console.error(error);
       throw error;

@@ -1,6 +1,7 @@
 import * as WeatherData from "./weatherdata.js";
 import * as CardCreator from "./cardcreator.js";
 
+await WeatherData.loadCities();
 CardCreator.init();
 
 const btnHtml = document.querySelector("#searchBtn");
@@ -14,7 +15,6 @@ btnHtml.addEventListener("click", async () => {
   if (!result) return;
 
   const { city, weather } = result;
-
   CardCreator.addCity(city, weather);
 
   userInputHtml.value = "";
@@ -23,7 +23,6 @@ btnHtml.addEventListener("click", async () => {
 userInputHtml.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
-
     btnHtml.click();
   }
 });

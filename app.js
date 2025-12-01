@@ -1,5 +1,5 @@
-import * as WeatherData from "./weatherdata.js";
-import * as CardCreator from "./cardcreator.js";
+import * as WeatherData from "./assets/weatherdata.js";
+import * as CardCreator from "./assets/cardcreator.js";
 
 await WeatherData.loadCities();
 CardCreator.init();

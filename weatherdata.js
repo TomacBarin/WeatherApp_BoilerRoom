@@ -65,7 +65,7 @@ export class WeatherService {
         throw new Error('Kunde inte hämta väderdata');
       }
 
-      const xmlText = await res.text();  // API returnerar XML, inte JSON
+      const xmlText = await res.text();
       return xmlText;
 
     } catch (error) {

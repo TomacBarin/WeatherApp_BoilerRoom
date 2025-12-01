@@ -1,24 +1,27 @@
 let addedCities = [];
 
-export function init(){
+export function init() {
   console.log("Created city storage array");
-    }
+}
 
 export function getWeatherIcon(weatherCode) {
   switch (weatherCode) {
-    case 0: return '☀️';
-    case 1: return '🌤️';
-    case 2: return '☁️';
-    case 3: return '🌧️';
-    case 61: return '❄️';
+    case 0:
+      return "☀️";
+    case 1:
+      return "🌤️";
+    case 2:
+      return "☁️";
+    case 3:
+      return "🌧️";
+    case 61:
+      return "❄️";
   }
 }
 
-export function createCard(city, weather){
-
+export function createCard(city, weather) {
   const temp = Math.round(weather.temperature);
-
-  // Get card container
+  
   const weatherCards = document.querySelector("#weather-cards");
 
   // Create card element
@@ -55,15 +58,13 @@ export function createCard(city, weather){
   infoField.appendChild(weatherIcon);
   infoField.appendChild(weatherInfo);
   infoField.appendChild(infoGet);
-  
+
   // Add event listener to remove button
   removeBtn.onclick = () => {
     card.remove();
   };
 
   return card;
-
-
 }
 
 class City {
@@ -73,7 +74,7 @@ class City {
   }
 }
 
-export function addCity(city, weather){
+export function addCity(city, weather) {
   const addedCity = new City(city, weather);
   addedCities.push(addedCity);
   console.log(`Added city "${city.name}" to storage!`);
@@ -82,8 +83,8 @@ export function addCity(city, weather){
   getAddedCities();
 }
 
-export function getAddedCities(){
-  addedCities.forEach(cityInstance => {
-  console.log(cityInstance.city);
-});
+export function getAddedCities() {
+  addedCities.forEach((cityInstance) => {
+    console.log(cityInstance.city);
+  });
 }

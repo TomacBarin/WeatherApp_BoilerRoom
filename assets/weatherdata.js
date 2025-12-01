@@ -15,7 +15,7 @@ export async function loadCities() {
 
 export function findCityByName(name) {
   const lower = name.toLowerCase();
-  return allCities.find(c => c.name.toLowerCase() === lower);
+  return allCities.find((c) => c.name.toLowerCase() === lower);
 }
 
 export async function getWeather(cityName) {
@@ -37,7 +37,7 @@ export async function getWeather(cityName) {
       temperature: weatherJSON.current.temperature_2m,
       description: convertWmo(weatherJSON.current.weather_code),
       weathercode: weatherJSON.current.weather_code,
-      time: weatherJSON.current.time
+      time: weatherJSON.current.time,
     };
 
     return { city, weather };
@@ -66,7 +66,7 @@ function convertWmo(code) {
     75: "Snöfall",
     95: "Åska",
     96: "Åska",
-    99: "Åska"
+    99: "Åska",
   };
   return mapping[code] || "Okänt väder";
 }

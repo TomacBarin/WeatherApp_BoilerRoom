@@ -46,20 +46,16 @@ export function createCard(city, weather) {
   card.className = "weather-container";
   card.tabIndex = 0;
 
-  // BÄTTRE än "region" – VoiceOver säger "artikel" istället för "område"
   card.setAttribute("role", "article");
 
-  // Unikt ID för aria-labelledby
   const cardId = `weather-card-${city.name}-${Date.now()}`;
   card.setAttribute("aria-labelledby", cardId);
 
-  // Osynlig text – detta är vad VoiceOver läser upp (med engelsk röst, men det är okej!)
   const srOnly = document.createElement("div");
   srOnly.className = "sr-only";
   srOnly.id = cardId;
   srOnly.textContent = `${city.name}: ${temp} grader, ${weather.description}, hämtad ${weather.time}`;
 
-  // Synligt innehåll
   const cityName = document.createElement("h2");
   cityName.className = "stad";
   cityName.textContent = city.name;
@@ -77,7 +73,6 @@ export function createCard(city, weather) {
   infoGet.className = "infoGet";
   infoGet.textContent = `Hämtad ${weather.time}`;
 
-  // Ta bort-knapp
   const removeBtnField = document.createElement("div");
   removeBtnField.className = "removeCardField";
 
@@ -87,7 +82,6 @@ export function createCard(city, weather) {
   removeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
   removeBtn.onclick = () => card.remove();
 
-  // Bygg ihop
   const infoField = document.createElement("section");
   infoField.className = "infoField";
   infoField.append(cityName, weatherIcon, weatherInfo, infoGet);
@@ -96,7 +90,6 @@ export function createCard(city, weather) {
   card.append(srOnly, removeBtnField, infoField);
   weatherCards.appendChild(card);
 
-  // Fokus direkt när kortet dyker upp
   requestAnimationFrame(() => {
     card.focus();
   });

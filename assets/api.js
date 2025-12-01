@@ -6,7 +6,7 @@ export class ApiService {
   async fetchData() {
     try {
       const res = await fetch(this.url);
-      if (!res.ok) throw new Error('Kunde inte hämta data');
+      if (!res.ok) throw new Error("Kunde inte hämta data");
       return await res.json();
     } catch (error) {
       console.error(error);

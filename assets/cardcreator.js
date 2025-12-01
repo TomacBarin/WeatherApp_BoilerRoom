@@ -7,34 +7,34 @@ export function init() {
 export function getWeatherIcon(weatherCode) {
   switch (weatherCode) {
     case 0:
-      return "Solemoji";
+      return "partly-cloudy.png";
     case 1:
-      return "Delvis molnigt";
+      return "partly-cloudy.png";
     case 2:
-      return "Molnigt";
+      return "mostly-cloudy.png";
     case 3:
-      return "Regnigt";
+      return "rain.png";
     case 45:
     case 48:
-      return "Dimma";
+      return "mostly-cloudy.png";
     case 51:
     case 53:
     case 55:
-      return "Lätt regn";
+      return "partly-cloudy-rain.png";
     case 61:
     case 63:
     case 65:
-      return "Regn";
+      return "rain.png";
     case 71:
     case 73:
     case 75:
-      return "Snö";
+      return "mostly-cloudy.png";
     case 95:
     case 96:
     case 99:
-      return "Åska";
+      return "thunderstorm.png";
     default:
-      return "Molnigt";
+      return "partly-cloudy.png";
   }
 }
 
@@ -60,10 +60,19 @@ export function createCard(city, weather) {
   cityName.className = "stad";
   cityName.textContent = city.name;
 
-  const weatherIcon = document.createElement("div");
-  weatherIcon.className = "displayIcon";
-  weatherIcon.textContent = `${getWeatherIcon(weather.weathercode)} ${temp} °C`;
-  weatherIcon.setAttribute("aria-hidden", "true");
+  const weatherIconContainer = document.createElement("div");
+  weatherIconContainer.className = "displayIcon";
+
+  const iconImg = document.createElement("img");
+  iconImg.src = `/assets/images/${getWeatherIcon(weather.weathercode)}`;
+  iconImg.alt = weather.description; // bra för tillgänglighet!
+  iconImg.className = "weather-icon";
+
+  const tempSpan = document.createElement("span");
+  tempSpan.textContent = `${temp} °C`;
+  tempSpan.className = "temperature";
+
+  weatherIconContainer.append(iconImg, tempSpan);
 
   const weatherInfo = document.createElement("p");
   weatherInfo.className = "weatherInfo";
@@ -84,7 +93,7 @@ export function createCard(city, weather) {
 
   const infoField = document.createElement("section");
   infoField.className = "infoField";
-  infoField.append(cityName, weatherIcon, weatherInfo, infoGet);
+  infoField.append(cityName, weatherIconContainer, weatherInfo, infoGet);
 
   removeBtnField.appendChild(removeBtn);
   card.append(srOnly, removeBtnField, infoField);

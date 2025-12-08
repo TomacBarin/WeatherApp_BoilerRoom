@@ -1,0 +1,30 @@
+{
+  "name": "weatherapp_boilerroom",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This is the interface to a weather application, built in collaboration with a (currently unknown) team from the system developer section of Chas Academy.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomacBarin/WeatherApp_BoilerRoom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomacBarin/WeatherApp_BoilerRoom/issues"
+  },
+  "homepage": "https://github.com/TomacBarin/WeatherApp_BoilerRoom#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@types/jest": "^30.0.0",
+    "babel-jest": "^30.2.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  }
+}

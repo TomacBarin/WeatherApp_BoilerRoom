@@ -31,7 +31,7 @@ export class WeatherCard{
 
         const dateP = document.createElement('p');
         dateP.className = 'weather-date';
-        dateP.textContent = "Måndag, 24 November";
+        dateP.textContent = `${this.weather.time.split("T")}`;
 
         const cityH2 = document.createElement('h2');
         cityH2.className = 'weather-city';
@@ -76,7 +76,7 @@ export class WeatherCard{
         setTimeout(() => {
             this.element.remove();
             this.element = null;
-        }, 300); // matchar transition-tiden
+        }, 300);
     }
 }
 }

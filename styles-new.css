@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: #333333;
+    background-color: var(--card-bg);
     color: #ffffff;
     font-family: roboto;
 

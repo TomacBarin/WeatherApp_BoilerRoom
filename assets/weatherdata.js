@@ -1,5 +1,5 @@
 import { ApiService } from "./api.js";
-
+// Lista för städer
 let allCities = [];
 
 export async function loadCities() {

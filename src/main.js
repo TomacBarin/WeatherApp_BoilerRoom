@@ -1,4 +1,4 @@
-import { WeatherCard } from './weatherCard.js';
+import { WeatherCard } from '../assets/weatherCard.js';
 import * as WeatherData from "../assets/weatherdata.js";
 
 let weatherCards = [];

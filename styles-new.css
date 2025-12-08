@@ -28,6 +28,9 @@ body {
     /* width: 100vw; */
 }
 
+#cards-container:has(.weather-card:nth-child(n+2)) .weather-card {
+    border-radius: var(--card-br) var(--card-br) var(--card-br) var(--card-br);
+}
 
 .weather-card {
 

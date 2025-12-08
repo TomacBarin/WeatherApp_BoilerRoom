@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Vädret Nu – enkel och snabb väderprognos för svenska städer. Sök på stad och få aktuellt väder direkt."
+    />
+    <script type="module" src="src/main.js" defer></script>
+    <link rel="stylesheet" href="styles-new.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vädret Nu – Snabb väderprognos för Sverige</title>
+  </head>
+
+  <body>
+    <div id="container-main">
+      <main>
+        <!-- Main card -->
+        <!-- Väderkort hamnar här i -->
+        <div id="nav-container">
+          <nav id="nav-bar">
+            <input type="text" id="cityInput" placeholder="Sök efter stad..." />
+            <button id="searchBtn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </nav>
+        </div>
+        <div id="cards-container"></div>
+      </main>
+    </div>
+  </body>
+</html>

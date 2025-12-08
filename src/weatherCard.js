@@ -1,8 +1,7 @@
 export class WeatherCard{
-    constructor(city, latitude, longitude) {
+    constructor(city, weather) {
         this.city = city;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.weather = weather;
 
         this.createCard();
     }
@@ -36,20 +35,20 @@ export class WeatherCard{
 
         const cityH2 = document.createElement('h2');
         cityH2.className = 'weather-city';
-        cityH2.textContent = this.city;
+        cityH2.textContent = this.city.name;
 
         const iconImg = document.createElement('img');
         iconImg.className = 'weather-icon';
         iconImg.src = "assets/images/partly-cloudy.png";
-        iconImg.alt = '';
+        iconImg.alt = this.weather?.description || '';
 
         const degreesH3 = document.createElement('h3');
         degreesH3.className = 'weather-degrees';
-        degreesH3.textContent = "31";
+        degreesH3.textContent = this.weather ? Math.round(this.weather.temperature) : "--";
 
         const descP = document.createElement('p');
         descP.className = 'weather-description';
-        descP.textContent = "Mest soligt";
+        descP.textContent = this.weather?.description || "Okänt väder";
 
         infoDiv.append(dateP, cityH2, iconImg, degreesH3, descP);
         this.element.appendChild(infoDiv);
